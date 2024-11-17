@@ -15,7 +15,7 @@ public class IngredientDatabase {
         ingredients.add(ingredient);
     }
 
-    // すべての材料を取得
+    // ゲッター
     public List<Ingredient> getIngredients() {
         return ingredients;
     }
@@ -23,14 +23,14 @@ public class IngredientDatabase {
     // 指定した名前の材料を検索
     public Ingredient findIngredient(String name) {
         for (Ingredient ingredient : ingredients) {
-            if (ingredient.getName().equalsIgnoreCase(name)) {
+            if (ingredient.getName().equals(name)) {//ここは文字列の比較だからマッチングでできるかも？
                 return ingredient;
             }
         }
         return null;
     }
 
-    // 現在の材料リストを表示
+    // 材料を表示
     public void displayIngredients() {
         for (Ingredient ingredient : ingredients) {
             System.out.println(ingredient);

@@ -23,7 +23,7 @@ public class Menu {
     public double calculateTotalCost(IngredientDatabase ingredientDatabase) {
         double totalCost = 0.0;
         for (Map.Entry<String, Double> entry : requiredIngredients.entrySet()) {
-            Ingredient ingredient = ingredientDatabase.findIngredient(entry.getKey());
+            Ingredient ingredient = ingredientDatabase.findIngredient(entry.getKey());//材料の探索
             if (ingredient == null || ingredient.getQuantity() < entry.getValue()) {
                 return Double.MAX_VALUE;  // 材料不足の場合は最大コスト
             }

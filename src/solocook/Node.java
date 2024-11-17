@@ -14,6 +14,7 @@ public class Node implements Comparable<Node> {
         this.parent = parent;
     }
 
+    //ゲッター
     public String getIngredientName() {
         return ingredientName;
     }
@@ -31,6 +32,7 @@ public class Node implements Comparable<Node> {
     }
 
     @Override
+    //ここで比較をするか否かは要検討必要
     public int compareTo(Node other) {
         return Double.compare(this.cost, other.cost);  // コスト順で優先度キューに追加
     }
